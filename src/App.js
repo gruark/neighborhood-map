@@ -5,14 +5,28 @@ import './App.css';
 
 class App extends Component {
 	
+	
 componentDidMount() {
 	this.renderMap()
+	this.getData()
 }
+
+getData= () => {
+	fetch('https://data.nashville.gov/resource/xakp-ess3.json?$$app_token=Z8HyslorgvpE5qkBOpQUfp0cI')
+	   .then(function(res){
+			console.log(res.text());
+	})
+	   .then(function(data){
+					  console.log(data);
+					  });
+}
+
 	
 renderMap = () => {
 	loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDmP2qumKqdy87zIAWOgcEf57KT5JJDHEM&v=3&callback=initMap")
     window.initMap = this.initMap	
 }
+
 
 initMap = () => {
 	 var map = new window.google.maps.Map(document.getElementById('map'), {
