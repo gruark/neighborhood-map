@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 
 class SearchBox extends Component{
 
-{
-	state = {
-		query: '',
-		searchedArt: []
-	}
-	
-	updateQuery = (query) => {
-		this.setState({
-			query: query
-	  })
-      this.updateSearchedArt(query);
-	
-    }
 	render() {
   
 		
@@ -25,11 +12,11 @@ class SearchBox extends Component{
 			ref={input => this.search = input}
 			onChange={this.handleInputChange}
 		  />
-		  <p>{this.state.queary}</p>
+		  <p></p>
 		  </form>
 		  )
 	   }
 	}
-}
+
 
 export default SearchBox;
