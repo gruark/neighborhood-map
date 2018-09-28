@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Map from './Components/map';
-import SlideMenu from './Components/SlideMenu';
+import SlideMenu from './Components/navBar';
 import logo from './logo.svg';
 import './App.css';
 

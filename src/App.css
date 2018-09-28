@@ -1,3 +1,5 @@
+/*  App Styles */
+
 .App {
   text-align: center;
 }
@@ -27,6 +29,8 @@
   to { transform: rotate(360deg); }
 }
 
+/*  Map styles */
+
 #map {
    height: 100vh;
 }
@@ -35,4 +39,15 @@ html, body {
    height: 100%;
    margin: 0;
    padding: 0;
+}
+
+/*  Nav Bar Styles */
+
+.navbar {
+   height: 80px;
+   background-color: #993333;
+   padding: 20px;
+}
+
+h1 {
 }
