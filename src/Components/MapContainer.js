@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import {GoogleApiWrapper} from 'google-maps-react';
 
-class Map extends Component {
+
+export class MapContainer extends React.Component {}
+
 	state = {
 		locations: [],
 		markers: []
@@ -34,16 +37,45 @@ initMap = () => {
 		})
 	   
 
-     
      this.state.locations.map(location => {
 			let marker = new window.google.maps.Marker({
-			       position: {lat: {location.latitude}, lng: {location.longitude}},
+			       position: {lat: this.state.location.latitude, lng: this.state.location.longitude},
 		           map: map,
-		           title: {location.title},
+		           title: {location.title}	
 			    })
 		  })
 }
 
+
+    /*  
+	    this.props.markers
+		   .map(marker => (
+	          let marker = new google.maps.Marker({
+		         position: {lat: location.latitude, lng: location.longitude},
+		         map: map,
+		         title: {location.title}
+			});
+	     ))
+	  marker.setMap(map);
+
+	  marker.addListener('click', function () {
+			populateInfoWindow(this, locInfoWindow);
+		});
+	   }
+	  
+	  function populateInfoWindow(marker, infowindow) {
+		  if(infowindow.marker != marker) {
+			  infowindow.marker = marker;
+			  infowindow.setContent('<div>' + marker.title + '</div>');
+			  infowindow.open(map, marker);
+			  infowindow.addListener('closeclick', function(){
+					infowindow.setMarker(null);
+				});
+	        }
+			map.fitBounds(bounds);
+	  });
+    */
+ 
 
 render() {
 	return(
