@@ -8,9 +8,7 @@ class Footer extends Component{
 		
 		return(
 		     <footer className = "footer-copyright">
-			    <container>
 			    Copyright &copy; {(new Date().getFullYear())} - Gina Ruark
-			     </container>
 			 </footer>
 		  );
 	   }
