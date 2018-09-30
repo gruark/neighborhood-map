@@ -34,7 +34,7 @@ initMap = () => {
 		})
 	   
 
-     
+  /*   
      this.state.locations.map(location => {
 			let marker = new window.google.maps.Marker({
 			       position: {lat: {location.latitude}, lng: {location.longitude}},
@@ -42,6 +42,7 @@ initMap = () => {
 		           title: {location.title},
 			    })
 		  })
+	 */
 }
 
 
