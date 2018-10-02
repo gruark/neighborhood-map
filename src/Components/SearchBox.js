@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
 
 class SearchBox extends Component{
-
-	render() {
+	
+render() {
+	return {
   
-		
-		return(
-		 <form>
-		 <input
-		    placeholder="Search"
-			ref={input => this.search = input}
-			onChange={this.handleInputChange}
-		  />
-		  <p></p>
-		  </form>
-		  )
-	   }
+	  </ol>
+       )
 	}
+	
+}
 
 
 export default SearchBox;

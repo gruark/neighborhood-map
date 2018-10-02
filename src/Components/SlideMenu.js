@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SearchBox from './SearchBox';
 
 
 /* Modified from https://bootstrapious.com/p/bootstrap-sidebar */
@@ -15,7 +14,14 @@ class SlideMenu extends Component{
             <div className="sidebar-header">
                 <h3>Sidebar</h3>
             </div>
-			<SearchBox />
+			  <ol className='art-list'>
+	           {this.props.locations.map((location) => (
+		         <ul key={location.title}>
+		          {location.title}
+		         </ul>
+		       ))}
+	          </ol>
+			
            </div>
 	 
 		  );
