@@ -45,6 +45,7 @@ html, body {
 
 .navbar {
    height: 80px;
+   z-index: 100;
    background-color: #47178f;
    padding: 20px;
 
@@ -58,7 +59,26 @@ h1 {
 
 /*  Sidebar Styles */
 
+#sidebar {
+    position: absolute;
+	z-index: 100;
+	background: #f2f2f2;
+	width: 225px;
+	max-width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+}
 
+.searchbox{
+	padding: 12px;
+}
+
+.art-list .li {
+    padding-left: 0;
+	font-size: 14px;
+}
+
+/*  InfoBox Styles */
 
 
 /*  Footer styles */

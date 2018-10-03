@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import ArtData from './ArtData';
 
 
 class Map extends Component {
+	
+constructor() {
+	super();
+	this.state = {
+		markers: [],
+	}
+}
 	
 componentDidMount() {
 	   this.renderMap()
@@ -23,8 +29,11 @@ initMap = () => {
      //Create a Single infoWindow
 		 let infoWindow = new window.google.maps.InfoWindow()
 		 
+     //Set boundaries of window
+	     let bounds = new window.google.maps.LatLngBounds();
+		 
 	  //Add Markers to map
-	  this.props.locations.map(location => {
+	   this.props.locations.map(location => {
 	      let latitude = parseFloat(location.latitude);
 	      let longitude = parseFloat(location.longitude);
 
@@ -42,15 +51,20 @@ initMap = () => {
 		 marker.addListener('click', function() {
 		   //Change content
 		   infoWindow.setContent(
-					<ArtData
-					   location={location}
-					/>
-				  )
+			   '<img src="' + location.photo_link + '" alt="' + location.title + '" width="300px">' +
+              '<div><strong>' + location.title + '</strong><br>' +
+                'Address: ' + location.location + '<br>' +
+                'Medium: ' + location.medium + '</div>'
+		   )
 											  
 		   //Open InfoWindow								  
 		   infoWindow.open(map, marker);
+		   
+		  
 		 })
+		 	    
 	  })
+
    }
 	
 
