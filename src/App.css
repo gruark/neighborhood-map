@@ -55,31 +55,90 @@ h1 {
    font-family: 'Crafty Girls', cursive;
    color: #00D46A;
    font-size: 2.5em;
+   text-align: left;
 }
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #00D46A;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
 
 /*  Sidebar Styles */
 
-#sidebar {
-    position: absolute;
-	z-index: 100;
-	background: #f2f2f2;
-	width: 225px;
-	max-width: 100%;
+.bm-menu {
+  background: #cbeeda;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.sidebar {
+    position: fixed;
+	width: 0;
+	z-index: 1;
+	background-color: #cbeeda;
+	overflow-x: hidden;
+	transition: 0.5s;
 	height: 100vh;
 	overflow-y: scroll;
 }
 
 .searchbox{
-	padding: 12px;
+	padding: 20px;
+	width: 200px;
+}
+
+.art-list .ul {
+    padding: 10px;
 }
 
 .art-list .li {
-    padding-left: 0;
 	font-size: 14px;
+	font-weight: bold;
 }
 
 /*  InfoBox Styles */
 
+#marker-content{
+    max-width: 275px;
+}
+
+#marker-data {
+	padding: 5px;
+	line-height: 1.6;
+}
+
+.center {
+    max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.marker-title{
+    text-align: center;
+	padding-top: 10px;
+}
 
 /*  Footer styles */
 
@@ -91,3 +150,48 @@ h1 {
    height: 50px;
    font-size: 16px;
 }
+
+@media only screen and (max-width: 500px){
+
+/*  Nav Bar Styles */
+
+h1 {
+   font-family: 'Crafty Girls', cursive;
+   color: #00D46A;
+   font-size: 2em;
+   text-align: center;
+}
+
+/*  Sidebar Styles */
+
+#sidebar {
+    position: absolute;
+	z-index: 100;
+	background: #cbeeda;
+	width: 95%;
+	max-width: 100%;
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+.searchbox .search-art{
+	width: 250px;
+}
+
+.art-list .ul {
+    padding: 10px;
+}
+
+.art-list .li {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+

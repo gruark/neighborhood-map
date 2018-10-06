@@ -9,17 +9,41 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Specification
 
-This site has been built using React,Google Maps, and a 3rd party API from https://data.nashville.gov/.  It will include a list of art that can be searched by title and category.  
+This site has been built using React,Google Maps API, and a 3rd party API from https://data.nashville.gov/.  It includes a list of art that is searchable by title.  Note:  The service worker will only work in production mode, but the visited markers do remain chached in offline mode.
 
+### Dependencies
+
+The following dependencies were used in this project:
+
+    Axios: ^0.18.0,
+    Prop-Types: ^15.6.2,
+    React: ^16.5.2,
+    React-dom: ^16.5.2,
+    React-scripts: 1.1.5,
+	React-burger-menu: "^2.5.3",
+
+	
+### Referenced Tutorials
+
+     The following tutorials were referenced in the creation of this project.  
+	 
+	# For the Slide Menu:
+	   For the sidebar:  Modified from https://bootstrapious.com/p/bootstrap-sidebar 
+	   For the search box:  Modified from the Udacity Contact list project 
+	   To remove unnecessary brackets:  https://stackoverflow.com/questions/14640486/remove-all-characters-except-alphanumeric-and-spaces-with-javascript
+	   
+    # For the Map:
+	   To set up map without an external dependency: Modified from https://www.youtube.com/playlist?list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1
+	   
+	 
+	
 ### How to Run
 
 1. Download the files and unzip them to your desktop.
 
-2.  In this folder, start up a simple HTTP server to serve up the site files on your local computer. Python has some simple tools to do this, and you don't even need to know Python. For most people, it's already installed on your computer. 
+2.  Navigate to the folder using the Node.JS command prompt.  If you don't have it installed on your machine, you can download it from https://nodejs.org/en/.
 
-In a terminal, check the version of Python you have: `python -V`. If you have Python 2.x, spin up the server with `python -m SimpleHTTPServer 8000` (or some other port, if port 8000 is already in use.) For Python 3.x, you can use `python3 -m http.server 8000`. If you don't have Python installed, navigate to Python's [website](https://www.python.org/) to download and install the software.
-
-3. With your server running, visit the site: `http://localhost:3000`.
+3.  Launch the project using the npm start command.  The site will be accessible through http://localhost:3000/.  
 
 
 

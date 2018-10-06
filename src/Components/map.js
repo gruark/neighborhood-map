@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 
+//Modified from Udacity:  Neighborhood Map Explained  https://www.youtube.com/playlist?list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1
 
 class Map extends Component {
-	
-constructor() {
-	super();
-	this.state = {
-		markers: [],
-	}
-}
 	
 componentDidMount() {
 	   this.renderMap()
@@ -29,8 +23,6 @@ initMap = () => {
      //Create a Single infoWindow
 		 let infoWindow = new window.google.maps.InfoWindow()
 		 
-     //Set boundaries of window
-	     let bounds = new window.google.maps.LatLngBounds();
 		 
 	  //Add Markers to map
 	   this.props.locations.map(location => {
@@ -45,24 +37,23 @@ initMap = () => {
 			position: {lat: latitude, lng: longitude},
 			map: map,
 		 })
-		  
+
 		 
 		 //Add Event Listener
 		 marker.addListener('click', function() {
 		   //Change content
 		   infoWindow.setContent(
-			   '<img src="' + location.photo_link + '" alt="' + location.title + '" width="300px">' +
-              '<div><strong>' + location.title + '</strong><br>' +
-                'Address: ' + location.location + '<br>' +
-                'Medium: ' + location.medium + '</div>'
+			  '<div id="marker-content"><img class = "center" src="' + location.photo_link + '" alt="' + location.title + '" height="175px">' +
+              '<div id="marker-data"><div class="marker-title"><strong>' + location.title + '</strong></div><br>' +
+                '<strong>Address: </strong>' + location.location + '<br>' +
+                '<strong>Medium: </strong>' + location.medium + '<br>' +
+				'<strong>Type: </strong>' + location.type + '</div></div>'
 		   )
-											  
+							  
 		   //Open InfoWindow								  
 		   infoWindow.open(map, marker);
-		   
-		  
 		 })
-		 	    
+
 	  })
 
    }

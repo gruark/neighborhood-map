@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Map from './Components/map';
 import SlideMenu from './Components/SlideMenu';
-import NavBar from './Components/navBar';
 import Footer from './Components/footer';
 import registerServiceWorker from './registerServiceWorker';
 import './App.css';
@@ -14,6 +13,7 @@ constructor() {
 	super();
 	this.state = {
 		locations: [],
+		markers: [],
 	}
 }
 	
@@ -35,18 +35,24 @@ getLocations = () => {
 	    })
 }
 
+markerClicked = marker => {
+	this.setState({markers: Object.assign(this.state.markers, marker) });
+	const location = this.state.locations.find(location => location.id === marker.id);
+}
 	
-
+locationClicked = location => {
+	console.log(location);
+}
 
 render() {
 	return(
 	   <div className = "app">
-	     <NavBar />
 	      <SlideMenu 
-		    locations={this.state.locations}
+		    {...this.state}
+			locationClicked={this.locationClicked}
 		  /> 
 		   <Map
-            locations={this.state.locations}
+            {...this.state}
         />
 		 <Footer />
 	   </div>
