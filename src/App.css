@@ -85,7 +85,7 @@ h1 {
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
-  margin-top: 50px;
+
 }
 
 
@@ -97,12 +97,9 @@ h1 {
   font-size: 1.15em;
   height: 100vh;
   padding: 20px;
-  margin-top: 50px;
+
 }
 
-bm-menu-overlay {
-  margin-top: 50px;
-}
 
 
 .sidebar {

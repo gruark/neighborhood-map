@@ -16,19 +16,21 @@ renderMap = () => {
 initMap = () => {
 	 let map = new window.google.maps.Map(document.getElementById('map'), {
 	      center: {lat: 36.162664, lng: -86.781602},
-		  zoom: 13
+		  zoom: 5
 		})
 
 	 
      //Create a Single infoWindow
 		 let infoWindow = new window.google.maps.InfoWindow()
 		 
+	 //Set bounds of map markers
+	     let bounds = new window.google.maps.LatLngBounds();
 		 
 	  //Add Markers to map
 	   this.props.locations.map(location => {
 	      let latitude = parseFloat(location.latitude);
 	      let longitude = parseFloat(location.longitude);
-
+          
          //Marker Creation
 		 
 	     let marker = new window.google.maps.Marker({
@@ -37,6 +39,10 @@ initMap = () => {
 			position: {lat: latitude, lng: longitude},
 			map: map,
 		 })
+		 
+		 //Extend Marker bounds
+		 let loc = new window.google.maps.LatLng(marker.position.lat(), marker.position.lng());
+		 bounds.extend(loc)
 
 		 
 		 //Add Event Listener
@@ -53,7 +59,8 @@ initMap = () => {
 		   //Open InfoWindow								  
 		   infoWindow.open(map, marker);
 		 })
-
+         map.fitBounds(bounds);
+		 map.panToBounds(bounds);
 	  })
 
    }
