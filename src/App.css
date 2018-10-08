@@ -48,15 +48,19 @@ html, body {
    z-index: 100;
    background-color: #47178f;
    padding: 20px;
+}
 
+#header {
+   padding-left: 50px;
 }
 
 h1 {
    font-family: 'Crafty Girls', cursive;
    color: #00D46A;
    font-size: 2.5em;
-   text-align: left;
+   padding-left: 50px;
 }
+
 
 /* Position and sizing of burger button */
 .bm-burger-button {
@@ -81,16 +85,25 @@ h1 {
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
+  margin-top: 50px;
 }
 
 
 /*  Sidebar Styles */
 
-.bm-menu {
-  background: #cbeeda;
+.bm-menu-wrap {
+  background-color: #cbeeda;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  height: 100vh;
+  padding: 20px;
+  margin-top: 50px;
 }
+
+bm-menu-overlay {
+  margin-top: 50px;
+}
+
 
 .sidebar {
     position: fixed;
@@ -158,9 +171,9 @@ h1 {
 h1 {
    font-family: 'Crafty Girls', cursive;
    color: #00D46A;
-   font-size: 2em;
-   text-align: center;
+   font-size: 1.6em;
 }
+
 
 /*  Sidebar Styles */
 
@@ -168,14 +181,19 @@ h1 {
     position: absolute;
 	z-index: 100;
 	background: #cbeeda;
-	width: 95%;
+	width: 97%;
+	margin-top: 50px;
 	max-width: 100%;
 	height: 100vh;
 	overflow-y: scroll;
 }
 
+.slideMenu {
+   margin: 500px;
+}
+
 .searchbox .search-art{
-	width: 250px;
+	padding-left: 10px;
 }
 
 .art-list .ul {
@@ -185,6 +203,15 @@ h1 {
 .art-list .li {
 	font-size: 14px;
 	font-weight: bold;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 20px;
+  height: 15px;
+  left: 20px;
+  top: 20px;
 }
 
 }

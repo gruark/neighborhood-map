@@ -64,7 +64,8 @@ render() {
 
 	return(
 		  <main>
-		    <div id="map"></div>
+		    <div id="map" tabindex="-1" aria-hidden="true" aria-describedby="map-locations"></div>
+			<div hidden id="map-locations">A map that shows the Art locations.</div>
 		  </main>
 	   )
 	}

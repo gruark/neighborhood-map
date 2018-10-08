@@ -34,13 +34,8 @@ getLocations = () => {
 			  console.log("Error: " + error)
 	    })
 }
-
-markerClicked = marker => {
-	this.setState({markers: Object.assign(this.state.markers, marker) });
-	const location = this.state.locations.find(location => location.id === marker.id);
-}
 	
-locationClicked = location => {
+locationClicked = (location) => {
 	console.log(location);
 }
 
