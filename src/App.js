@@ -14,9 +14,20 @@ constructor() {
 	this.state = {
 		locations: [],
 		markers: [],
+		updateSuperState: state => {
+			 this.setState(state)
+		  }
 	}
 }
 	
+componentDidMount() {
+	this.getLocations()
+}
+
+updateSuperState = state => {
+	this.setState(state)
+}
+
 componentDidMount() {
 	this.getLocations()
 }
@@ -35,16 +46,12 @@ getLocations = () => {
 	    })
 }
 	
-locationClicked = (location) => {
-	console.log(location);
-}
 
 render() {
 	return(
 	   <div className = "app">
 	      <SlideMenu 
 		    {...this.state}
-			locationClicked={this.locationClicked}
 		  /> 
 		   <Map
             {...this.state}

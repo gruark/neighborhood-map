@@ -27,14 +27,14 @@ initMap = () => {
 	     let bounds = new window.google.maps.LatLngBounds();
 		 
 	  //Add Markers to map
-	   this.props.locations.map(location => {
+	  const markers = this.props.locations.map(location => {
 	      let latitude = parseFloat(location.latitude);
 	      let longitude = parseFloat(location.longitude);
           
          //Marker Creation
 		 
 	     let marker = new window.google.maps.Marker({
-			id: location.title,
+			id: location.id,
 			title: location.title,
 			position: {lat: latitude, lng: longitude},
 			map: map,
@@ -61,8 +61,9 @@ initMap = () => {
 		 })
          map.fitBounds(bounds);
 		 map.panToBounds(bounds);
+		 return marker;
 	  })
-
+         this.props.updateSuperState({markers})
    }
 	
 
@@ -71,7 +72,7 @@ render() {
 
 	return(
 		  <main>
-		    <div id="map" tabindex="-1" aria-hidden="true" aria-describedby="map-locations"></div>
+		    <div id="map" tabIndex="-1" aria-hidden="true" aria-describedby="map-locations"></div>
 			<div hidden id="map-locations">A map that shows the Art locations.</div>
 		  </main>
 	   )
