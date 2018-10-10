@@ -58,6 +58,7 @@ componentWillUpdate(){
                 <header id="header" role="banner">
 			       <span className="center"><h1>Art in Public Places</h1></span>
                  </header>
+	
    			   <Menu
 			       left
 				   id={"sidebar"}
@@ -88,9 +89,9 @@ componentWillUpdate(){
 		            )
 			      )}
 	          </ul>
+			         
 		   </Menu>
-
-        </nav>
+     </nav>
 	
 	 
 		  );

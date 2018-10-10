@@ -7,7 +7,7 @@ class Footer extends Component{
 	render() {
 		
 		return(
-		     <footer id="footer" role="contentinfo">
+		     <footer id="footer-copyright" role="contentinfo">
 			    Copyright &copy; {(new Date().getFullYear())} - Gina Ruark
 			 </footer>
 		  );

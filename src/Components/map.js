@@ -61,6 +61,7 @@ initMap = () => {
 		 })
          map.fitBounds(bounds);
 		 map.panToBounds(bounds);
+		 map.setZoom(map.getZoom()-1); 
 		 return marker;
       
 		
@@ -75,7 +76,7 @@ render() {
 	
 
 	return(
-		  <main id = "page wrap">
+		  <main id = "page-wrap">
 		    <div id="map" tabIndex="-1" aria-hidden="true" aria-describedby="map-locations"></div>
 			<div hidden id="map-locations">A map that shows the Art locations.</div>
 		  </main>
