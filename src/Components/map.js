@@ -16,7 +16,7 @@ renderMap = () => {
 initMap = () => {
 	 let map = new window.google.maps.Map(document.getElementById('map'), {
 	      center: {lat: 36.162664, lng: -86.781602},
-		  zoom: 5
+		  zoom: 15
 		})
 
 	 
@@ -49,8 +49,8 @@ initMap = () => {
 		 marker.addListener('click', function() {
 		   //Change content
 		   infoWindow.setContent(
-			  '<div id="marker-content"><img class = "center" src="' + location.photo_link + '" alt="' + location.title + '" height="175px">' +
-              '<div id="marker-data"><div class="marker-title"><strong>' + location.title + '</strong></div><br>' +
+			  '<div id="marker-content"><img class = "center" src="' + location.photo_link + '" alt="' + location.title.replace(/[^\w\s]/gi, '') + '" height="175px">' +
+              '<div id="marker-data"><div class="marker-title"><strong>' + location.title.replace(/[^\w\s]/gi, '') + '</strong></div><br>' +
                 '<strong>Address: </strong>' + location.location + '<br>' +
                 '<strong>Medium: </strong>' + location.medium + '<br>' +
 				'<strong>Type: </strong>' + location.type + '</div></div>'
@@ -62,8 +62,12 @@ initMap = () => {
          map.fitBounds(bounds);
 		 map.panToBounds(bounds);
 		 return marker;
+      
+		
 	  })
          this.props.updateSuperState({markers})
+		   // Add a marker clusterer to manage the markers.
+      
    }
 	
 
@@ -71,7 +75,7 @@ render() {
 	
 
 	return(
-		  <main>
+		  <main id = "page wrap">
 		    <div id="map" tabIndex="-1" aria-hidden="true" aria-describedby="map-locations"></div>
 			<div hidden id="map-locations">A map that shows the Art locations.</div>
 		  </main>

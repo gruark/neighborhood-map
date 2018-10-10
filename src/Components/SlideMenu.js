@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import escapeRegExp from 'escape-string-regexp'
-import { slide as Menu } from 'react-burger-menu'
+import Menu from 'react-burger-menu/lib/menus/slide'
 
 
 /* Modified from https://github.com/negomi/react-burger-menu and from the Udacity Contact list project */
@@ -24,7 +24,7 @@ componentWillUpdate(){
 	  this.setState({ query: query.trim() })
       let visibleArt
 	  if(this.state.query){
-		  const match = new RegExp(escapeRegExp(this.state.query), 'i')
+		  const match = new RegExp(escapeRegExp(query), 'i')
 		  const markers = this.props.markers.map(marker => {
 			if(match.test(marker.title)) {
 				marker.setVisible(true);
@@ -40,22 +40,33 @@ componentWillUpdate(){
 		  visibleArt = this.props.locations
 		  this.setState({visibleArt})
 	  }
+
   }
   
      locationClicked = (id) => {
 		 const marker = this.props.markers.find(marker => marker.title === id)
 		 window.google.maps.event.trigger(marker, 'click')
+
 	 }
   
  
 	render() {
-		
+		 
 		return( 
+
 			<nav className="navbar">
                 <header id="header" role="banner">
 			       <span className="center"><h1>Art in Public Places</h1></span>
                  </header>
-   			   <Menu left markers={this.props.markers} locations={this.props.locations}>
+   			   <Menu
+			       left
+				   id={"sidebar"}
+				   noOverlay
+				   markers={this.props.markers} 
+				   locations={this.props.locations} 
+				   pageWrapId={ "page-wrap" } 
+				   outerContainerId={ "outer-container" }
+				 >
 			      <div className='searchbox'>
 			      <input
  				     type='text'
@@ -69,7 +80,7 @@ componentWillUpdate(){
 
 			  <ul className='art-list'>
 	             {this.state.visibleArt.map((location) => (
-		            <li key={location.title.replace(/[^\w\s]/gi, '')} tabIndex="0" onClick={() => this.locationClicked(location.title)}>
+		            <li key={location.title} tabIndex="0" onClick={() => this.locationClicked(location.title)}>
 				    
 				 {/*List of Art titles with unnecessary brackets removed stackoverflow.com/questions/14640486/remove-all-characters-except-alphanumeric-and-spaces-with-javascript */}
 		              {location.title.replace(/[^\w\s]/gi, '')}
@@ -77,9 +88,10 @@ componentWillUpdate(){
 		            )
 			      )}
 	          </ul>
-		  
 		   </Menu>
+
         </nav>
+	
 	 
 		  );
 	   }

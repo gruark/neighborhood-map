@@ -50,6 +50,7 @@ getLocations = () => {
 render() {
 	return(
 	   <div className = "app">
+	   <div id="outer-container">
 	      <SlideMenu 
 		    {...this.state}
 		  /> 
@@ -57,6 +58,7 @@ render() {
             {...this.state}
         />
 		 <Footer />
+	   </div>
 	   </div>
 	   )
 	}
