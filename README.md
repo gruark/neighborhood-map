@@ -47,7 +47,16 @@ The following dependencies were used in this project:
 
 2.  Navigate to the folder using the Node.JS command prompt.  If you don't have it installed on your machine, you can download it from https://nodejs.org/en/.
 
-3.  Launch the project using the npm start command.  The site will be accessible through http://localhost:3000/.  
+3.  Install the dependencies listed in the Dependencies section using the "npm install --save" command.
+
+     example:  npm install --save axios
+
+4.  Launch the project in production mode using the following commands:
+     
+	 npm run build
+	 serve -s build
+	 
+	 Then visit localhost:5000 to view the project.
 
 
 
