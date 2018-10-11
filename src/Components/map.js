@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 //Modified from Udacity:  Neighborhood Map Explained  https://www.youtube.com/playlist?list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1
 
 class Map extends Component {
@@ -16,7 +17,7 @@ renderMap = () => {
 initMap = () => {
 	 let map = new window.google.maps.Map(document.getElementById('map'), {
 	      center: {lat: 36.162664, lng: -86.781602},
-		  zoom: 15
+		  zoom: 5
 		})
 
 	 
@@ -67,7 +68,6 @@ initMap = () => {
 		
 	  })
          this.props.updateSuperState({markers})
-		   // Add a marker clusterer to manage the markers.
       
    }
 	
@@ -83,6 +83,8 @@ render() {
 	   )
 	}
 }
+
+//Script to load map using vanilla JS
 
  function loadScript(url) {
 	 let index = window.document.getElementsByTagName("script")[0]

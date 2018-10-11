@@ -28,9 +28,8 @@ updateSuperState = state => {
 	this.setState(state)
 }
 
-componentDidMount() {
-	this.getLocations()
-}
+
+//Uses Axios to load external API
 
 getLocations = () => {
 	const endPoint = "https://data.nashville.gov/resource/xakp-ess3.json?$$app_token=Z8HyslorgvpE5qkBOpQUfp0cI"

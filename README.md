@@ -28,12 +28,16 @@ The following dependencies were used in this project:
      The following tutorials were referenced in the creation of this project.  
 	 
 	# For the Slide Menu:
-	   For the sidebar:  Modified from https://bootstrapious.com/p/bootstrap-sidebar 
+	   For the sidebar:  Modified from https://github.com/negomi/react-burger-menu
 	   For the search box:  Modified from the Udacity Contact list project 
 	   To remove unnecessary brackets:  https://stackoverflow.com/questions/14640486/remove-all-characters-except-alphanumeric-and-spaces-with-javascript
 	   
+	   Major thanks to Forrest, Tony, and Manish for helping me think through this component.
+	   
     # For the Map:
 	   To set up map without an external dependency: Modified from https://www.youtube.com/playlist?list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1
+	   
+	# For the Footer (Copyright):   http://updateyourfooter.com/
 	   
 	 
 	

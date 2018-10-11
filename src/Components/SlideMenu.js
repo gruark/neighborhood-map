@@ -20,6 +20,8 @@ componentWillUpdate(){
 	}
 }
   
+//Updates the search list and marker filter when a piece of art is queried
+
   updateQuery = (query) => {
 	  this.setState({ query: query.trim() })
       let visibleArt
@@ -43,6 +45,7 @@ componentWillUpdate(){
 
   }
   
+  //Launches the infoWindow when a searched title is clicked
      locationClicked = (id) => {
 		 const marker = this.props.markers.find(marker => marker.title === id)
 		 window.google.maps.event.trigger(marker, 'click')
@@ -59,6 +62,8 @@ componentWillUpdate(){
 			       <span className="center"><h1>Art in Public Places</h1></span>
                  </header>
 	
+	       {/* React Burger Menu */}
+		   
    			   <Menu
 			       left
 				   id={"sidebar"}
@@ -68,6 +73,8 @@ componentWillUpdate(){
 				   pageWrapId={ "page-wrap" } 
 				   outerContainerId={ "outer-container" }
 				 >
+				 
+			{/* Search box */}
 			      <div className='searchbox'>
 			      <input
  				     type='text'
@@ -78,10 +85,10 @@ componentWillUpdate(){
 				   />
 			      </div>
 			   
-
+            {/* Displays the list of art */}
 			  <ul className='art-list'>
 	             {this.state.visibleArt.map((location) => (
-		            <li key={location.title} tabIndex="0" onClick={() => this.locationClicked(location.title)}>
+		            <li key={location.title.replace(/[^\w\s]/gi, '')} tabIndex="0" onClick={() => this.locationClicked(location.title)}>
 				    
 				 {/*List of Art titles with unnecessary brackets removed stackoverflow.com/questions/14640486/remove-all-characters-except-alphanumeric-and-spaces-with-javascript */}
 		              {location.title.replace(/[^\w\s]/gi, '')}
