@@ -41,7 +41,7 @@ getLocations = () => {
 			})
 		})
 	   .catch(error => {
-			  console.log("Error: " + error)
+			 alert('The location feed failed to load.');
 	    })
 }
 	
