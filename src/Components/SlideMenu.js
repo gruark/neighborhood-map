@@ -86,15 +86,20 @@ componentWillUpdate(){
 			      </div>
 			   
             {/* Displays the list of art */}
+			
 			  <ul className='art-list'>
-	             {this.state.visibleArt.map((location) => (
+			    {
+			    {/*  Error checking modified from https://stackoverflow.com/questions/47898175/render-some-text-if-array-filter-returns-0-in-react?rq=1 */}
+			    this.state.visibleArt.length > 0 ?
+	              this.state.visibleArt.map((location) => (
 		            <li key={location.title.replace(/[^\w\s]/gi, '')} tabIndex="0" aria-labelledby="art-list" onClick={() => this.locationClicked(location.title)}>
 				    
 				 {/*List of Art titles with unnecessary brackets removed stackoverflow.com/questions/14640486/remove-all-characters-except-alphanumeric-and-spaces-with-javascript */}
 		              {location.title.replace(/[^\w\s]/gi, '')}
 		         </li>
-		            )
-			      )}
+		            )) :
+					   <p> No Search results</p>
+			      }
 	          </ul>
 			         
 		   </Menu>
