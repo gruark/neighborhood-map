@@ -31,11 +31,13 @@ The following dependencies were used in this project:
 	   For the sidebar:  Modified from https://github.com/negomi/react-burger-menu
 	   For the search box:  Modified from the Udacity Contact list project 
 	   To remove unnecessary brackets:  https://stackoverflow.com/questions/14640486/remove-all-characters-except-alphanumeric-and-spaces-with-javascript
+	   For the search error checking:  https://stackoverflow.com/questions/47898175/render-some-text-if-array-filter-returns-0-in-react?rq=1
 	   
 	   Major thanks to Forrest, Tony, and Manish for helping me think through this component.
 	   
     # For the Map:
 	   To set up map without an external dependency: Modified from https://www.youtube.com/playlist?list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1
+	   To error check the Map script:  https://stackoverflow.com/questions/9860823/js-loading-script-error
 	   
 	# For the Footer (Copyright):   http://updateyourfooter.com/
 	   
@@ -58,5 +60,10 @@ The following dependencies were used in this project:
 	 
 	 Then visit localhost:5000 to view the project.
 
+Note:  If you would rather lauch the project in development mode (without the service worker), you can do so by using the following npm command:
+
+          npm start
+	 
+	 Then visit localhost:3000 to view the project
 
 
