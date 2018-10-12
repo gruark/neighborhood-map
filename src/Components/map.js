@@ -12,15 +12,14 @@ componentDidMount() {
 renderMap = () => {
 	loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyDmP2qumKqdy87zIAWOgcEf57KT5JJDHEM&v=3&callback=initMap")
     window.initMap = this.initMap	
-}
+} 
 
 initMap = () => {
 	 let map = new window.google.maps.Map(document.getElementById('map'), {
 	      center: {lat: 36.162664, lng: -86.781602},
 		  zoom: 5
-		})
-
-	 
+		}) 
+		
      //Create a Single infoWindow
 		 let infoWindow = new window.google.maps.InfoWindow()
 		 
@@ -61,7 +60,7 @@ initMap = () => {
 		   infoWindow.open(map, marker);
 		 })
          map.fitBounds(bounds);
-		 map.panToBounds(bounds);
+		 map.panTo(bounds.getCenter());
 		 map.setZoom(map.getZoom()-1); 
 		 return marker;
       
@@ -92,6 +91,11 @@ render() {
 	 script.src = url
 	 script.async = true
 	 script.defer = true	
+	 
+	 // Error reporting modified from https://stackoverflow.com/questions/9860823/js-loading-script-error
+	 script.onerror = function() {
+             alert("Unable to load the Map");
+     }
 	 index.parentNode.insertBefore(script, index)
 	}
 
